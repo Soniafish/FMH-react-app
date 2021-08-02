@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-// import ReactHtmlParser, {
-//     convertNodeToElement,
-//     processNodes
-// } from "react-html-parser";
+import ReactHtmlParser from "react-html-parser";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStore, faShoppingBag, faTree, faSchool, faHospital } from '@fortawesome/free-solid-svg-icons'
@@ -41,7 +38,7 @@ const Tab = ({ houseInfo, houseLife }) => {
             <label className="nearby_item"><input type="checkbox" name="nearby" value="hospital" checked={houseLife.hospital ? true : false} readOnly /><span><FontAwesomeIcon icon={faHospital} />近醫療機構</span></label>
         </div>
         <div className={active === tabNav[2] ? "tab_cnt active" : "tab_cnt"}>
-            {/* <div className="max">{ReactHtmlParser(houseInfo.remark)}</div> */}
+            <div className="max">{ReactHtmlParser(houseInfo.remark)}</div>
         </div>
     </div>;
 }

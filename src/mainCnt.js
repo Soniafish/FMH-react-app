@@ -2,7 +2,7 @@ import React from "react";
 import { ShareSocial } from 'react-share-social'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUserTie, faPhoneVolume } from '@fortawesome/free-solid-svg-icons'
+import { faUserTie, faPhoneVolume, faHeart } from '@fortawesome/free-solid-svg-icons'
 
 const style = {
     background: 'transparent',
@@ -19,6 +19,7 @@ const MainCnt = ({ houseInfo }) => {
                 <span className="pdcnt_price_unit">萬元</span>
             </p>
             <p>{houseInfo.area_price}</p>
+            <button><FontAwesomeIcon icon={faHeart} /></button>
         </div>
         <div className="pdcnt_layout">
             <p>
@@ -41,11 +42,8 @@ const MainCnt = ({ houseInfo }) => {
             <p><span>地址</span>{houseInfo.all_addr}</p>
         </div>
         <div className="pdcnt_keeper">
-            <FontAwesomeIcon icon={faUserTie} />
-            <div>
-                <p className="name">{houseInfo.im_name} <span>{houseInfo.company_name}</span></p>
-                <a className="tel" href="tel:0911123123"><FontAwesomeIcon icon={faPhoneVolume} /> 0911-123-123</a>
-            </div>
+            <p className="name"><FontAwesomeIcon icon={faUserTie} /> {houseInfo.im_name} <span>{houseInfo.company_name}</span></p>
+            <a className="tel" href="tel:0911123123"><FontAwesomeIcon icon={faPhoneVolume} /> (暫不提供)</a>
         </div>
         <ShareSocial
             style={style}

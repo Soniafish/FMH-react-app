@@ -24,10 +24,14 @@ const Pdcnt = () => {
     });
     const [houseInfo, setHouseInfo] = useState({});
     const [dealList, setDealList] = useState([]);
+    const [dealListPage, setDealListPage] = useState({
+        "currentPage": 0,
+        "totalPage": 0
+    });
 
 
     useEffect(() => {
-        console.log("call useEffect");
+        // console.log("call useEffect");
 
         fetch(API_GET_HOUSE, {
             method: 'POST',
@@ -41,11 +45,11 @@ const Pdcnt = () => {
         }).then(res => {
             return res.json();
         }).then(result => {
-            console.log(result);
+            // console.log(result);
 
             if (result.hasOwnProperty("data")) {
                 console.log(result.data);
-
+                
                 setHouseStatus(true);
 
                 setHouseInfo(result.data.houseInfo);
@@ -53,6 +57,7 @@ const Pdcnt = () => {
                 let photos = result.data.houseInfo.photos.split(",");
                 setPhotos(photos);
 
+                // console.log(result.data.houseInfo.house_life);
                 if (result.data.houseInfo.house_life !== "") {
                     let nearby = {
                         "store": false,
@@ -79,7 +84,15 @@ const Pdcnt = () => {
                     setHouseLife(nearby);
                 }
 
-                setDealList(result.data.dealList);
+                if (result.data.dealList.length>0){
+
+                    setDealList(result.data.dealList);
+                    setDealListPage({
+                        "currentPage": 1,
+                        "totalPage": Math.ceil(result.data.dealList.length / 20)
+                    });
+
+                }
 
             } else {
                 alert(result.message);
@@ -105,7 +118,7 @@ const Pdcnt = () => {
 
         <div className="pdcnt_bottom container">
             <h3>實價登錄</h3>
-            <DealList dealList={dealList} />
+            <DealList dealList={dealList} dealListPage={dealListPage} setDealListPage={setDealListPage}/>
         </div>
 
     </div>;
