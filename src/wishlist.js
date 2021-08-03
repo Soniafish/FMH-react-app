@@ -43,7 +43,8 @@ const Wishlist = ({ isLogin }) => {
 
         }else{
             alert("尚未登入");
-            window.location.href = `http://localhost:3000/`;
+            // window.location.href = `http://localhost:3000/`;
+            window.location.href = `https://fmh-react-app.web.app`;
         }
         
     }, [delHouseid])
