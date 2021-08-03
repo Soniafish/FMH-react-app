@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { API_GET_USER } from "./constants.js";
+import { API_USER } from "./constants.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
-const Login = ({ popupName, openPopup, user, setUser}) => {
+const Login = ({ popupName, openPopup, isLogin, setLogin}) => {
 
     const [email, setEmail] = useState("");
     const [pw, setPW] = useState("");
@@ -19,7 +19,7 @@ const Login = ({ popupName, openPopup, user, setUser}) => {
     }
 
     function changePopup() {
-        openPopup("regiest");
+        openPopup("register");
         clearIpt();
         clearMessage();
     }
@@ -51,7 +51,7 @@ const Login = ({ popupName, openPopup, user, setUser}) => {
             altPWError("欄位不可為空")
         }else{
 
-            fetch(API_GET_USER, {
+            fetch(API_USER, {
                 method: 'PATCH',
                 body: JSON.stringify({
                     email: email,
@@ -66,8 +66,10 @@ const Login = ({ popupName, openPopup, user, setUser}) => {
             }).then(function (result) {
                 console.log(result);
                 if (result.hasOwnProperty('ok')) {
-                    setUser(result.data);
+                    setLogin(true);
+                    setlocalStorage(result.data);
                     altLoginMessage("登入成功！");
+
                     setTimeout(() => {
                         openPopup("");
                         clearMessage();
@@ -79,6 +81,15 @@ const Login = ({ popupName, openPopup, user, setUser}) => {
             });
 
         }
+    }
+
+    function setlocalStorage(userData) {
+        const dateTime = Date.now();
+        const timestamp = Math.floor(dateTime / 1000);
+        let limitstamp = timestamp + 86400;
+        userData.limitstamp = limitstamp;
+        console.log(userData);
+        localStorage.setItem('user', JSON.stringify(userData));
     }
 
     return <div className={popupName === "login" ? "pagecover show" :"pagecover"}>

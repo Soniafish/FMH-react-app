@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { API_GET_USER } from "./constants.js";
+import { API_USER } from "./constants.js";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
-const Regiest = ({ popupName, openPopup}) => {
+const Register = ({ popupName, openPopup}) => {
 
     const [username, setName] = useState("");
     const [userpw, setPW] = useState("");
@@ -12,7 +12,7 @@ const Regiest = ({ popupName, openPopup}) => {
     const [nameError, altNameError] = useState("");
     const [emailError, altEmailError] = useState("");
     const [pwError, altPWError] = useState("");
-    const [regiestMessage, altRegiestMessage] = useState("");
+    const [registerMessage, altRegisterMessage] = useState("");
 
     function closePopup() {
         openPopup("");
@@ -42,7 +42,7 @@ const Regiest = ({ popupName, openPopup}) => {
         altNameError("");
         altEmailError("");
         altPWError("");
-        altRegiestMessage("");
+        altRegisterMessage("");
     }
 
     function clearIpt() {
@@ -64,7 +64,7 @@ const Regiest = ({ popupName, openPopup}) => {
                 altPWError("欄位不可為空");
             }
         }else {
-            fetch(API_GET_USER, {
+            fetch(API_USER, {
                 method: 'POST',
                 body: JSON.stringify({
                     name: username,
@@ -80,21 +80,21 @@ const Regiest = ({ popupName, openPopup}) => {
             }).then(function (result) {
                 // console.log(result);
                 if (result.hasOwnProperty('ok')) {
-                    altRegiestMessage("註冊成功, 請重新登入");
+                    altRegisterMessage("註冊成功, 請重新登入");
                     setTimeout(() => {
                         openPopup("login");
                         clearMessage();
                         clearIpt();
                     }, 1000);
                 } else {
-                    altRegiestMessage(result.message);
+                    altRegisterMessage(result.message);
                 }
             });
 
         }
     }
-    return <div className={popupName === "regiest" ? "pagecover show" : "pagecover"}>
-        <div className="popup" id="popup_regist">
+    return <div className={popupName === "register" ? "pagecover show" : "pagecover"}>
+        <div className="popup" id="popup_register">
             <span></span>
             <button className="btn_esc" onClick={closePopup}><FontAwesomeIcon icon={faTimes} /></button>
             <p className="title">註冊會員帳號</p>
@@ -103,18 +103,18 @@ const Regiest = ({ popupName, openPopup}) => {
                 <span className="error">{nameError === "" ? "" : nameError}</span>
             </div>
             <div>
-                <input type="email" name="useremail" value={useremail} onChange={emailChange} placeholder="輸入密碼"/>
+                <input type="email" name="useremail" value={useremail} onChange={emailChange} placeholder="輸入電子信箱"/>
                 <span className="error">{emailError === "" ? "" : emailError}</span>
             </div>
             <div>
-                <input type="text" name="userpw" value={userpw} onChange={pwChange} placeholder="輸入電子信箱"/>
+                <input type="text" name="userpw" value={userpw} onChange={pwChange} placeholder="輸入密碼"/>
                 <span className="error">{pwError === "" ? "" : pwError}</span>
             </div>
-            <button className="btn_regiest" onClick={regist}>註冊新帳號</button>
-            <p>{regiestMessage === "" ? "" : regiestMessage}</p>
-            <button class="btn_txt" onClick={changePopup}>已經有帳戶了？點此登入</button>
+            <button className="btn_register" onClick={regist}>註冊新帳號</button>
+            <p id="popup_registerMessage">{registerMessage === "" ? "" : registerMessage}</p>
+            <button className="btn_txt" onClick={changePopup}>已經有帳戶了？點此登入</button>
         </div>
     </div>;
 }
 
-export default Regiest;
+export default Register;

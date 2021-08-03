@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { API_GET_HOUSES } from "./constants.js";
+import { API_HOUSES } from "./constants.js";
 
 import Search from "./search.js";
 import Filter from "./filter.js";
@@ -47,7 +47,7 @@ const Pdlist = () => {
         console.log("useEffect!");
         console.log(sentApiData);
 
-        fetch(API_GET_HOUSES, {
+        fetch(API_HOUSES, {
             method: 'POST',
             body: JSON.stringify(sentApiData),
             headers: {

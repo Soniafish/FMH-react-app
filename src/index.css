@@ -105,7 +105,7 @@ header{
     display: flex;
     flex-direction: row-reverse;
 }
-.header_function button{
+.header_function .header_icon{
     display: none;
     cursor: pointer;
     font-size: 16px;
@@ -116,14 +116,14 @@ header{
     background-color: transparent;
     border: none;
 }
-.header_function button.show{
+.header_function .header_icon.show{
     display: inline-block;
 }
 .header_function svg{
     font-size: 16px;
     color: #fff;
 }
-/* login, regiest */
+/* login, register */
 .pagecover{
     display: none;
     position: fixed;
@@ -186,7 +186,7 @@ header{
     border-radius: 5px;
     margin-bottom: 10px;
 }
-.popup .btn_login, .btn_regiest, .popup .btn_txt{
+.popup .btn_login, .btn_register, .popup .btn_txt{
     display: block;
     width: 100%;
     line-height: 16px;
@@ -209,7 +209,7 @@ header{
 .popup .btn_txt:hover{
     text-decoration: underline;
 }
-#popup_loginMessage, #popup_registMessage{
+#popup_loginMessage, #popup_registerMessage{
     color: blue;
     padding-bottom: 10px;
 }
@@ -932,6 +932,85 @@ header{
     }
     .tab_cnt p{
         width: 100%;
+    }
+}
+
+/* wishlist */
+.wishlist{
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+.wishlist .pdbox{
+    display: block;
+    width: calc((100% - 45px) / 4);
+    margin-right: 15px;
+    margin-bottom: 10px;
+}
+.wishlist .pdbox:nth-child(4n){
+    margin-right: 0;
+}
+.wishlist .pdbox .pdbox_info, .wishlist .pdbox .pdbox_img, .wishlist .pdbox img{
+    display: block;
+    width: 100%;
+}
+.wishlist .pdbox_img{
+    position: relative;
+    margin-bottom: 5px;
+}
+.wishlist .pdbox_price{
+    left: auto;
+    right: 0;
+}
+.btn_delwish{
+    cursor: pointer;
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: 30px;
+    height: 30px;
+    background-color: #eee;
+    opacity: .9;
+    border: 1px solid #333;
+    padding: 3px;
+    text-align: center;
+    border-radius: 6px;
+}
+.btn_delwish:hover{
+    background-color: #fff;
+}
+.btn_delwish svg{
+    position: relative;
+    margin-right: 0;
+}
+@media screen and (max-width: 768px) {
+    .wishlist .pdbox{
+        display: block;
+        width: calc((100% - 30px) / 3);
+    }
+    .wishlist .pdbox:nth-child(4n){
+        margin-right: 15px;
+    }
+    .wishlist .pdbox:nth-child(3n){
+        margin-right: 0;
+    }
+}
+@media screen and (max-width: 450px) {
+    .wishlist .pdbox{
+        display: block;
+        width: calc((100% - 15px) / 2);
+    }
+    .wishlist .pdbox:nth-child(3n){
+        margin-right: 15px;
+    }
+    .wishlist .pdbox:nth-child(2n){
+        margin-right: 0;
+    }
+    .wishlist .pdbox_info p{
+        font-size: 13px;
+    }
+    .wishlist .pdbox_info .title{
+        font-size: 14px;
     }
 }
 

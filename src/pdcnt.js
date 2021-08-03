@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
-import { API_GET_HOUSE } from "./constants.js";
+import { API_HOUSE } from "./constants.js";
 // import { Compilation } from "webpack";
 
 import Carousel from "./carousel.js";
@@ -9,7 +9,7 @@ import MainCnt from "./mainCnt.js";
 import Tab from "./tab.js";
 import DealList from "./dealList.js";
 
-const Pdcnt = () => {
+const Pdcnt = ({ isLogin }) => {
     let { id } = useParams();
     console.log("houseid:" + id);
 
@@ -33,7 +33,7 @@ const Pdcnt = () => {
     useEffect(() => {
         // console.log("call useEffect");
 
-        fetch(API_GET_HOUSE, {
+        fetch(API_HOUSE, {
             method: 'POST',
             body: JSON.stringify({
                 "houseid": id
@@ -108,7 +108,7 @@ const Pdcnt = () => {
     return <div className="mainCnt">
         <div className="pdcnt_top container">
             <Carousel photos={photos} />
-            <MainCnt houseInfo={houseInfo} />
+            <MainCnt houseInfo={houseInfo} isLogin={isLogin} />
         </div>
 
         <div className="pdcnt_middle container">
