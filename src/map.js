@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import GoogleMapReact from 'google-map-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 const Map = ({ mapCenterInfo, mapZoomInfo, houseList }) => {
 
     // const MyPosition = ({ text }) => <div className="mark"><FontAwesomeIcon icon={faMapMarkerAlt} /><div>{text}</div></div>;
-    const HousesPosition = ({ href, address, price }) => <Link to={"/pdcnt/" + href}><div className="mark_h"><FontAwesomeIcon icon={faMapMarkerAlt} color="graan" /><div>{address}<br />{"總價: " + price}</div></div></Link>;
+    const HousesPosition = ({ href, address, price }) => <Link to={"/pdcnt/" + href}><div className="mark_h"><FontAwesomeIcon icon={faHome} color="green" /><div>{address}<br />{"總價: " + price}</div></div></Link>;
 
     console.log(mapCenterInfo.lat + ", " + mapCenterInfo.lng);
 

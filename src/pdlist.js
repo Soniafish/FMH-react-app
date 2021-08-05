@@ -71,10 +71,13 @@ const Pdlist = () => {
                         "totalPage": result.totalPage
                     });
                     
-                    setMap({
-                        "lat": result.data[0].lat,
-                        "lng": result.data[0].lng
-                    });
+                    if (result.data.length>0){
+                        setMap({
+                            "lat": result.data[0].lat,
+                            "lng": result.data[0].lng
+                        });
+                    }
+                    
                 }
 
             } else {
