@@ -23,10 +23,10 @@ const Header = ({ isLogin, setLogin})=> {
     return <div>
         <header>
             <div className="header_function">
-                <button className={!isLogin ? "header_icon show" : "header_icon"} onClick={clickUserIcon}><FontAwesomeIcon icon={faUser} style={{ color: 'pink' }} /></button>
-                <button className={isLogin ? "header_icon show" : "header_icon"} onClick={clickOutIcon}><FontAwesomeIcon icon={faSignOutAlt} /></button>
+                <button className={!isLogin ? "header_icon show" : "header_icon"} onClick={clickUserIcon}><FontAwesomeIcon icon={faUser} color="white"/></button>
+                <button className={isLogin ? "header_icon show" : "header_icon"} onClick={clickOutIcon}><FontAwesomeIcon icon={faSignOutAlt} color="white"/></button>
                 <Link to={"/wishlist"} className={isLogin ? "header_icon show" : "header_icon"}>
-                    <FontAwesomeIcon icon={faHeart} />
+                    <FontAwesomeIcon icon={faHeart} color="white"/>
                 </Link>
             </div>
             <Link to={"/"} className="logo">F.M.H</Link>

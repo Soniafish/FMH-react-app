@@ -96,7 +96,7 @@ const Register = ({ popupName, openPopup}) => {
     return <div className={popupName === "register" ? "pagecover show" : "pagecover"}>
         <div className="popup" id="popup_register">
             <span></span>
-            <button className="btn_esc" onClick={closePopup}><FontAwesomeIcon icon={faTimes} /></button>
+            <button className="btn_esc" onClick={closePopup}><FontAwesomeIcon icon={faTimes} color="gary"/></button>
             <p className="title">註冊會員帳號</p>
             <div>
                 <input type="text" name="username" value={username} onChange={nameChange} placeholder="輸入姓名"/>

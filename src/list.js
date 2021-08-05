@@ -25,7 +25,7 @@ const Pdbox = ({ pdinfo }) => {
         </div>
         <div className="pdbox_price">
             <p>{pdinfo.house_price + pdinfo.house_price_unit}</p>
-            <p>{pdinfo.area_price + "/坪"}</p>
+            <p>{pdinfo.area_price}</p>
         </div>
     </div>;
 

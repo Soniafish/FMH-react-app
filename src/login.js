@@ -95,7 +95,7 @@ const Login = ({ popupName, openPopup, isLogin, setLogin}) => {
     return <div className={popupName === "login" ? "pagecover show" :"pagecover"}>
         <div className="popup">
             <span></span>
-            <button className="btn_esc" onClick={closePopup}><FontAwesomeIcon icon={faTimes} /></button>
+            <button className="btn_esc" onClick={closePopup}><FontAwesomeIcon icon={faTimes} color="gary"/></button>
             <p className="title">登入會員帳號</p>
             <div>
                 <input type="email" name="useremail" value={email} onChange={emailChange} placeholder="輸入電子信箱"/>

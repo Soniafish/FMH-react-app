@@ -102,9 +102,9 @@ const Pdbox = ({ pdinfo, setDelWish}) => {
             <img src={pdinfo.photo_src} alt="" />
             <div className="pdbox_price">
                 <p>{pdinfo.house_price + pdinfo.house_price_unit}</p>
-                <p>{pdinfo.area_price + "/坪"}</p>
+                <p>{pdinfo.area_price}</p>
             </div>
-            <button className="btn_delwish" onClick={() => delWish(pdinfo.houseid)}><FontAwesomeIcon icon={faTrashAlt} /></button>
+            <button className="btn_delwish" onClick={() => delWish(pdinfo.houseid)}><FontAwesomeIcon icon={faTrashAlt} color="gray"/></button>
         </div>
         <div className="pdbox_info">
             <Link to={"/pdcnt/" + pdinfo.houseid} className="title">{pdinfo.title}</Link>

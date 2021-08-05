@@ -53,7 +53,7 @@ body, *{
     font-weight: normal;
     font-size: 16px;
     box-sizing: border-box;
-    color: #666;
+    /* color: #666; */
 }
 a{
     text-decoration: none;
@@ -121,7 +121,6 @@ header{
 }
 .header_function svg{
     font-size: 16px;
-    color: #fff;
 }
 /* login, register */
 .pagecover{
@@ -145,13 +144,11 @@ header{
     left: calc((100% - 340px) / 2);
     text-align: center;
     width: 340px;
+    color: #666;
     background-color: #fff;
     padding: 25px 15px 15px 15px;
     border-radius: 5px;
 }
-/* .popup.show{
-    display: block;
-} */
 .popup >span{
     position: absolute;
     top: 0;
@@ -203,7 +200,7 @@ header{
 }
 .popup .btn_txt{
     display: inline-block;
-    color: #666;
+    color: #333;
     text-decoration: none;
 }
 .popup .btn_txt:hover{
@@ -361,6 +358,7 @@ header{
     margin: 15px 20px 25px;
     border-radius: 6px;
     background-color: #fff;
+    color: #666;
 }
 
 .pdlist_wrap{
@@ -390,6 +388,7 @@ header{
 .pdbox_info{
     width: calc(100% - 150px);
     padding-left: 10px;
+    color: #666;
 }
 .pdbox_info .title{
     color: #333;
@@ -637,6 +636,7 @@ header{
 .pdcnt_info{
     padding-left: 10px;
     width: 40%;
+    color: #666;
 }
 .pdcnt_info >div{
     /* max-width: 450px; */
@@ -675,6 +675,11 @@ header{
     position: absolute;
     top: 15px;
     right: 20px;
+    border: 1px dashed;
+    border-radius: 6px;
+}
+.pdcnt_price button:hover{
+    border: 1px solid;
 }
 .pdcnt_layout{
     display: flex;
@@ -752,6 +757,7 @@ header{
     color: green;
 }
 .pdcnt_middle{
+    color: #666;
     padding: 20px;
     margin: 30px auto;
 }
@@ -806,6 +812,7 @@ header{
     display: inline-block;
 }
 .pdcnt_bottom{
+    color: #666;
     padding-bottom: 50px;
 }
 .tb_deals{

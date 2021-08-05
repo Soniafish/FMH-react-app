@@ -59,7 +59,7 @@ const MainCnt = ({ houseInfo, isLogin }) => {
                 <span className="pdcnt_price_unit">萬元</span>
             </p>
             <p>{houseInfo.area_price}</p>
-            <button><FontAwesomeIcon icon={faHeart} onClick={addWish}/></button>
+            <button><FontAwesomeIcon icon={faHeart} onClick={addWish} color="red"/></button>
         </div>
         <div className="pdcnt_layout">
             <p>
