@@ -11,7 +11,7 @@ import DealList from "./dealList.js";
 
 const Pdcnt = ({ isLogin }) => {
     let { id } = useParams();
-    console.log("houseid:" + id);
+    // console.log("houseid:" + id);
 
     const [houseStatus, setHouseStatus] = useState(false);
     const [photos, setPhotos] = useState([]);
@@ -48,7 +48,7 @@ const Pdcnt = ({ isLogin }) => {
             // console.log(result);
 
             if (result.hasOwnProperty("data")) {
-                console.log(result.data);
+                // console.log(result.data);
                 
                 setHouseStatus(true);
 

@@ -19,7 +19,7 @@ const MainCnt = ({ houseInfo, isLogin }) => {
         
         if (isLogin){
 
-            console.log("可執行");
+            // console.log("可執行");
             fetch(API_WISHLIST, {
                 method: 'POST',
                 body: JSON.stringify({
@@ -33,10 +33,10 @@ const MainCnt = ({ houseInfo, isLogin }) => {
             }).then(res => {
                 return res.json();
             }).then(result => {
-                console.log(result);
+                // console.log(result);
 
                 if (result.hasOwnProperty("ok")) {
-                    console.log(result.data);
+                    // console.log(result.data);
 
                     alert("成功加入最愛清單")
 

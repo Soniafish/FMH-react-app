@@ -10,7 +10,7 @@ const Map = ({ mapCenterInfo, mapZoomInfo, houseList }) => {
     // const MyPosition = ({ text }) => <div className="mark"><FontAwesomeIcon icon={faMapMarkerAlt} /><div>{text}</div></div>;
     const HousesPosition = ({ href, address, price }) => <Link to={"/pdcnt/" + href}><div className="mark_h"><FontAwesomeIcon icon={faHome} color="green" /><div>{address}<br />{"總價: " + price}</div></div></Link>;
 
-    console.log(mapCenterInfo.lat + ", " + mapCenterInfo.lng);
+    // console.log(mapCenterInfo.lat + ", " + mapCenterInfo.lng);
 
     const handleApiLoaded = (map, maps) => {
         // use map and maps objects

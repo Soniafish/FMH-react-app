@@ -22,9 +22,9 @@ const App = ()=> {
     const dateTime = Date.now();
     const timestamp = Math.floor(dateTime / 1000);
     if (userData === null) { //未登入
-      console.log("header未登入");
+      // console.log("header未登入");
     } else if (JSON.parse(userData).limitstamp < timestamp) {
-      console.log("header登入超過時間");
+      // console.log("header登入超過時間");
     } else {
       setLogin(true);
     }
@@ -49,7 +49,4 @@ const App = ()=> {
 }
 ReactDOM.render(<App />, document.getElementById("root"));
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

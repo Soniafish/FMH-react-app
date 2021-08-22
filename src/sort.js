@@ -5,7 +5,7 @@ const Sort = ({ sentApiData, changeSentApiData }) => {
 
     function handleSortBy(e) {
         setSortby(e.target.value);
-        console.log('Your sort is: ' + sort);
+        // console.log('Your sort is: ' + sort);
 
         if (e.target.value !== "choice") {
             let split_sortby = e.target.value.split("-");

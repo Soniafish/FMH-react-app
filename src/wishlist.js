@@ -28,15 +28,15 @@ const Wishlist = ({ isLogin }) => {
             }).then(res => {
                 return res.json();
             }).then(result => {
-                console.log(result);
+                // console.log(result);
 
                 if (result.hasOwnProperty("data")) {
-                    console.log(result.data);
+                    // console.log(result.data);
 
                     setWishList(result.data);
                     
                 } else {
-                    console.log(result.message);
+                    // console.log(result.message);
                 }
 
             });
@@ -49,7 +49,7 @@ const Wishlist = ({ isLogin }) => {
         
     }, [delHouseid])
 
-    console.log(wishList.length);
+    // console.log(wishList.length);
     if (wishList.length>0){
         return <div className="mainCnt">
             <div className="container">
@@ -82,7 +82,7 @@ const Pdbox = ({ pdinfo, setDelWish}) => {
         }).then(res => {
             return res.json();
         }).then(result => {
-            console.log(result);
+            // console.log(result);
 
             if (result.hasOwnProperty("ok")) {
                 alert("刪除成功");

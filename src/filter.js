@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Filter = ({ changeSentApiData }) => {
-    const [country, setCountry] = useState("all");
+    const [country, setCountry] = useState("中正區");
     const [layout, setLayout] = useState("all");
     const [price, setPrice] = useState("-1");
     const [size, setSize] = useState("-1");
@@ -9,23 +9,23 @@ const Filter = ({ changeSentApiData }) => {
     function countryChange(e) {
         setCountry(e.target.value);
         // console.log('currentTarget country is: ' + e.currentTarget.value);
-        console.log('Your country is: ' + country);
+        // console.log('Your country is: ' + country);
     }
     function layoutChange(e) {
         setLayout(e.target.value);
         // console.log('currentTarget layout is: ' + e.target.value);
-        console.log('Your layout is: ' + layout);
+        // console.log('Your layout is: ' + layout);
     }
     function priceChange(e) {
         setPrice(e.target.value);
         // console.log('currentTarget price is: ' + e.target.value);
-        console.log('Your price is: ' + price);
+        // console.log('Your price is: ' + price);
     }
 
     function sizeChange(e) {
         setSize(e.target.value);
         // console.log('currentTarget size is: ' + e.target.value);
-        console.log('Your price is: ' + size);
+        // console.log('Your price is: ' + size);
     }
 
     function sentFilter(e) {

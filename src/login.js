@@ -6,8 +6,8 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 
 const Login = ({ popupName, openPopup, isLogin, setLogin}) => {
 
-    const [email, setEmail] = useState("");
-    const [pw, setPW] = useState("");
+    const [email, setEmail] = useState("admin@gmail.com");
+    const [pw, setPW] = useState("admin1234");
     const [emailError, altEmailError] = useState("");
     const [pwError, altPWError] = useState("");
     const [loginMessage, altLoginMessage] = useState("");
@@ -64,7 +64,7 @@ const Login = ({ popupName, openPopup, isLogin, setLogin}) => {
             }).then(function (response) {
                 return response.json();
             }).then(function (result) {
-                console.log(result);
+                // console.log(result);
                 if (result.hasOwnProperty('ok')) {
                     setLogin(true);
                     setlocalStorage(result.data);
@@ -88,7 +88,7 @@ const Login = ({ popupName, openPopup, isLogin, setLogin}) => {
         const timestamp = Math.floor(dateTime / 1000);
         let limitstamp = timestamp + 86400;
         userData.limitstamp = limitstamp;
-        console.log(userData);
+        // console.log(userData);
         localStorage.setItem('user', JSON.stringify(userData));
     }
 

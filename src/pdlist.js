@@ -44,8 +44,8 @@ const Pdlist = () => {
 
         let mounted = true;
 
-        console.log("useEffect!");
-        console.log(sentApiData);
+        // console.log("useEffect!");
+        // console.log(sentApiData);
 
         fetch(API_HOUSES, {
             method: 'POST',
@@ -57,7 +57,7 @@ const Pdlist = () => {
         }).then(res => {
             return res.json();
         }).then(result => {
-            console.log(result);
+            // console.log(result);
 
             if (result.hasOwnProperty("data")) {
                 // console.log(result.data);

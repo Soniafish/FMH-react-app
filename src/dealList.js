@@ -4,11 +4,9 @@ import uuid from 'react-uuid'
 const DealList = ({ dealList, dealListPage, setDealListPage }) => {
     let page = dealListPage.currentPage;
     let totalPage = dealListPage.totalPage;
-    // const [btnPrve, setBtnPrve] = useState(false);
-    // const [btnNext, setBtnNext] = useState(false);
 
-    console.log(dealListPage);
-    console.log("page: " + page);
+    // console.log(dealListPage);
+    // console.log("page: " + page);
 
     function prvePage() {
         if (page !== 1) {
@@ -34,7 +32,7 @@ const DealList = ({ dealList, dealListPage, setDealListPage }) => {
         html.push(template);
     } else {
         //資料
-        console.log("page:" + page);
+        // console.log("page:" + page);
         let start = (page - 1) * 20;
         let end = page * 20;
         
@@ -71,7 +69,6 @@ const DealList = ({ dealList, dealListPage, setDealListPage }) => {
             </tbody>
         </table>
         <div className="pagination">
-            {/* <button className={btnPrve ? "btnPrve show" : "btnPrve"} onClick={prvePage}>上一頁</button><span>{page}/{dealListPage.totalPage}</span><button className={btnNext ? "btnNext show" : "btnNext"} onClick={nextPage}>下一頁</button> */}
             <button onClick={prvePage} >上一頁</button><span>{page}/{dealListPage.totalPage}</span><button onClick={nextPage}>下一頁</button>
         </div>
     </div>;
